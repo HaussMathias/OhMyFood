@@ -1,0 +1,212 @@
+:root {
+  --backgroundColor: #F3F3F3;
+  --lightGrey: #F6F6F6;
+  --grey: #EAEAEA;
+  --darkGrey: #353535;
+  --purple: #9356DC;
+  --lightPink: #FF79DA;
+  --lightGreen: #99E2D0;
+  --green: #008766;
+  --lightBlue: #89C8FA;
+  --blue: #003A68;
+}
+
+// @property --colorPrimary {
+//   syntax: "<color>";
+//   initial-value: transparent;
+//   inherits: false;
+// }
+
+// @property --colorSecondary {
+//   syntax: "<color>";
+//   initial-value: transparent;
+//   inherits: false;
+// }
+
+// @property --stop {
+//   syntax: "<percentage>";
+//   initial-value: 60%;
+//   inherits: false;
+// }
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  font-family: 'Shrikhand', cursive;
+}
+
+.card {
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  // max-width: 490px;
+  min-width: 340px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  border-radius: 130px;
+  padding: 15px 25px;
+  background: #9356dc;
+  background: linear-gradient(356deg,#9356dc 20%, #ff79da 90%);
+  color: var(--backgroundColor);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+// .fa-heart {
+//   --colorSecondary: transparent;
+//   --colorPrimary: transparent;
+//   // --colorSecondary: var(--purple);
+//   // --colorPrimary: var(--lightPink);
+//   font-size: 30px;
+//   color: transparent!important;
+//   transition: 1s, --stop 1s, --colorPrimary 1s, --colorSecondary 1s;
+//   -webkit-text-stroke-width: 1px; 
+//   -webkit-text-stroke-color: black;
+//   background: linear-gradient(
+//     to bottom,
+//     var(--colorSecondary),
+//     var(--colorPrimary) var(--stop)
+//   );
+//   -webkit-background-clip: text;
+// }
+
+// .fa-heart:hover {
+//   --colorSecondary: var(--purple);
+//   --colorPrimary: var(--lightPink);
+//   -webkit-text-stroke-color: transparent;
+// }
+
+.heart {
+  position: relative;
+  z-index: 3;
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+
+  .fa-heart {
+    position: absolute;
+  }
+
+  .fa-solid {
+    color: transparent;
+    background: linear-gradient(
+      to bottom,
+      var(--purple),
+      var(--lightPink) 60%
+    );
+    -webkit-background-clip: text;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .fa-regular {
+    transition: 0.5s;
+    opacity: 1;
+  }
+
+  .fa-solid:hover {
+    transition: 0.5s;
+    opacity: 1;
+  }
+
+  .fa-regular:hover {
+    transition: 0.5s;
+    opacity: 0;
+  }
+}
+
+
+
+/********** header **********/
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.pos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--grey);
+  box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75) inset;
+  height: 50px;
+}
+
+/********** footer **********/
+
+footer {
+  height: 100%;
+  background-color: var(--darkGrey);
+  padding: 30px;
+}
+
+.logo-footer {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.text-footer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p {
+    cursor: pointer;
+  }
+}
+
+footer .fa-solid {
+  color: white;
+  width: 25px;
+  height: 19px;
+  aspect-ratio: 1/1;
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: end;
+
+    .logo-footer {
+      margin-bottom: 0;
+      margin-left: 50px;
+    }
+
+    .text-footer {
+      flex-direction: row;
+      
+    }
+    .mar {
+      margin-right: 40px;
+    }
+  }
+}
